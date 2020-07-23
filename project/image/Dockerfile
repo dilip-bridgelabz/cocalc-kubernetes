@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND=noninteractive LANG=C.UTF-8 LC_ALL=C.UTF-8
 
-LABEL maintainer="SageMath, Inc. <office@sagemath.com>"
+LABEL maintainer="Dilip More <dilip.more@bridgelabz.com>"
 
 # So we can source (http://goo.gl/oBPi5G), which we will do in build.sh.
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
@@ -152,7 +152,7 @@ RUN \
 # RUN echo "install.packages(c('repr', 'IRdisplay', 'evaluate', 'crayon', 'pbdZMQ', 'httr', 'uuid', 'digest'), repos='http://cran.us.r-project.org'); devtools::install_github('IRkernel/IRkernel')" | R --no-save
 
 # Get the source code of cocalc, putting it at /cocalc
-RUN umask 022 && git clone https://github.com/sagemathinc/cocalc.git
+RUN umask 022 && git clone https://github.com/dilip-bridgelabz/cocalc.git 
 
 # tini: https://github.com/krallin/tini
 # This is also included in Docker itself via the `--init` flag
